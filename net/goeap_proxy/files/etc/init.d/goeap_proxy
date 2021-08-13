@@ -23,7 +23,9 @@ start_service()
     config_get_bool ignore_logoff global 'ignore_logoff' '0'
 
     local if_wan=$(uci get "network.${wan}.ifname")
+    if [[ ! $if_wan ]]; then local if_wan=$(uci get "network.${wan}.device") ; fi
     local if_router=$(uci get "network.${router}.ifname")
+    if [[ ! $if_router ]]; then local if_router=$(uci get "network.${router}.device"); fi
 
     procd_open_instance
     # attempt to restart every 30 seconds, the eap proxy for internet connectivity
