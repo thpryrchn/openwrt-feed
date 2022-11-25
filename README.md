@@ -28,10 +28,10 @@ The included DockerFile should make the build process simple and remove any eniv
 4. Update UID/GID in the Dockerfile to match that of your current user (`id`)
 5. Build Docker Image: `sudo docker build . -t openwrt-sdk:latest`
   - NOTE if you are on a Apple Silicone mac, you need to include the platform, like this `docker build --platform linux/amd64 . -t openwrt-sdk:latest`
-7. Create Build Directory: `mkdir ./build` --NOTE! This needs to be on a filesystem that supports case sensitive files. Like APFS Case sensitibe on a Mac. You can create a rewritable disk image to work in. 
-8. Build Package: `sudo docker run --rm -it --volume $(pwd):/src openwrt-sdk:latest goeap_proxy`
+6. Create Build Directory: `mkdir ./build` --NOTE! This needs to be on a filesystem that supports case sensitive files. Like APFS Case sensitibe on a Mac. You can create a rewritable disk image to work in. 
+7. Build Package: `sudo docker run --rm -it --volume $(pwd):/src openwrt-sdk:latest goeap_proxy`
   - replace `goeap_proxy` with the name of the package you want to build
-9. Built packages can be found in `./build/openwrt-sdk-x86-64_gcc-8.4.0_musl.Linux-x86_64/bin/packages/x86_64/pyther`
+8. Built packages can be found in `./build/openwrt-sdk-x86-64_gcc-8.4.0_musl.Linux-x86_64/bin/packages/x86_64/pyther`
 
 Troubleshooting
 
