@@ -38,8 +38,8 @@ Troubleshooting
 To get an interactive shell in container to troubleshoot build problems run
 ```
 $ sudo docker run -it --volume $(pwd):/src --entrypoint /bin/sh openwrt-sdk:latest
-$ sh -x /tmp/entry.sh # no args setups the build envirnoment
-$ sh -x /tmp/entry.sh goeap_proxy # builds goeap_proxy package
+$ sh -x /src/entry.sh # no args setups the build envirnoment
+$ sh -x /src/entry.sh goeap_proxy # builds goeap_proxy package
 ```
 
 
